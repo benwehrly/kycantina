@@ -1,0 +1,14 @@
+footer {
+    position: relative;
+    background-color: black;
+    color:white;
+    height: 150px;
+}
+
+footer > p {
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%);
+    position: absolute;
+    width: 300px;
+}
