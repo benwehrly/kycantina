@@ -72,7 +72,6 @@ header {
     padding: 30px 10px;
 }
 
-
 .navigation > li > span {
     position: absolute;
     margin: -2px 0 0 3px;
@@ -97,5 +96,7 @@ header {
 }
 
 .navigation > a:hover {
-  color:rgb(255, 150, 120)
+  color:rgb(255, 150, 120);
+  text-decoration: underline;
+  line-height: 50px;
 }
