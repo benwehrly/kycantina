@@ -30,7 +30,7 @@ const Highlights = () => {
           ? (ref.current.style.opacity = "100%")
           : 0;
       });
-      console.log(current)
+      // console.log(current)
     }, 5000);
     return () => clearTimeout(id);
   }, [current]);

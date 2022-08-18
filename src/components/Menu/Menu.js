@@ -16,7 +16,7 @@ const Menu = ({ menu }) => {
   const filteredMenu = [appetizers, entrees, sides, desserts];
 
   const handleChange = (e) => {
-    setSelected(e.target.value);
+    setSelected(parseInt(e.target.value));
   };
 
   return (
@@ -31,7 +31,6 @@ const Menu = ({ menu }) => {
         </select>
         {filteredMenu.map((category, i) => (
           <div>
-            <h1 className="category-name">{category[0].category}</h1>
             <Category
               i={i}
               category={category}
@@ -47,32 +46,40 @@ const Menu = ({ menu }) => {
 
 export default Menu;
 
-const Category = ({ category, i, selected }) => {
+const Category = ({ category, selected, i }) => {
+  const catRef = useRef(null);
 
-  const catRef = useRef(null)
-  
+  const scrollIntoViewWithOffset = (currentRef, offset) => {
+    window.scrollTo({
+      behavior: 'smooth',
+      top:
+        currentRef.getBoundingClientRect().top -
+        document.body.getBoundingClientRect().top -
+        offset,
+    })
+  }
+
   useEffect(() => {
-    catRef.current.scrollIntoView({ behavior: "smooth"})
+    selected === i && scrollIntoViewWithOffset(catRef.current, 100)
   }, [selected]);
 
   return (
-    <div className="category" ref={catRef}>
-      {category.map((food, i) => (
-        <Food food={food} i={i} />
-      ))}
-    </div>
+    <>
+      <h1 className="category-name" ref={catRef}>{category[0].category}</h1>
+      <div className="category" >
+        {category.map((food, i) => (
+          <Food food={food} i={i} />
+        ))}
+      </div>
+    </>
   );
 };
 
 const Food = ({ food, i }) => {
   const { name, description: details, heat, price, url } = food;
 
-  //   useEffect(() => {
-  //     console.log(food);
-  //   }, []);
-  // const fire =
-  //   "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/129/fire_1f525.png";
-  const fire = 'https://images.emojiterra.com/google/android-nougat/512px/1f336.png'
+  const fire =
+    "https://images.emojiterra.com/google/android-nougat/512px/1f336.png";
 
   return (
     <div
@@ -82,7 +89,7 @@ const Food = ({ food, i }) => {
       <img src={url} alt="" className="foodpic" />
       <div className="foodtext">
         <h3>{name}</h3>
-        <p>{details}</p>
+        <p>{details}asdaa asda dasdasd asd</p>
         <p>
           heat:
           {Array(heat)

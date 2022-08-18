@@ -38,5 +38,12 @@
     width: 100%;
     height: 4px;
     background-image: linear-gradient(to left, #FF0066 -20%, rgb(255,140,70));
-    top: 100%;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .highlights > .frame > img {
+        width: fit-content;
+        /* background-size: contain; */
+    }
 }
