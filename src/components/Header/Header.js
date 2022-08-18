@@ -49,14 +49,14 @@ const Header = () => {
         </div>
       </NavLink>
       <nav className="navigation">
-        <button>Order Now</button>
-        <NavLink to="/menu">Menu</NavLink>
-        <NavLink to="/">Services</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/">
-          More <span>&or;</span>
-        </NavLink>
-        <NavLink to="/">Sign in</NavLink>
+          <button>Order Now</button>
+          <NavLink to="/menu">Menu</NavLink>
+          <NavLink to="/">Services</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/">
+            More <span>&or;</span>
+          </NavLink>
+          <NavLink to="/">Sign in</NavLink>
       </nav>
     </header>
   );
